@@ -1,0 +1,34 @@
+@mixin atSmall {
+    @media screen and (min-width: 768px) {
+        @content
+    }
+};
+
+@mixin atMedium {
+    @media screen and (min-width: 992px) {
+        @content
+    }
+};
+
+@mixin atLarge {
+    @media screen and (min-width: 1200px) {
+        @content
+    }
+};
+
+@mixin atExtralarge {
+    @media screen and (min-width: 1400px) {
+        @content
+    }
+};
+
+@mixin linkStates($color, $decoration) {
+    &:link,
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        color: $color;
+        text-decoration: $decoration;
+    }
+};
