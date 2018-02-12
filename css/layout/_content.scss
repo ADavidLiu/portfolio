@@ -1,0 +1,11 @@
+.content {
+    box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+    transform: translateY(-5rem);
+    background-color: $color-white;
+    border-radius: 5px;
+    padding: 2rem;
+    min-height: 20vh;
+    @include atSmall {
+        transform: translateY(-3.75rem);
+    }
+}

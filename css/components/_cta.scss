@@ -1,0 +1,33 @@
+.cta {
+    display: flex;
+    height: 4rem;
+    background-color: $color-secondary;
+    border: 2px solid $color-secondary;
+    border-radius: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+    transition: all .25s;
+    @include linkStates($color-white, none);
+    @include atSmall {
+        height: 3rem;
+        padding: 0 2.5rem;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &--outline {
+        background: transparent;
+        border: 2px solid $color-secondary;
+        @include linkStates($color-secondary, none);
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-primary;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+// Color
+
+.u-color {
+    &-white {
+        color: $color-white;
+    }
+}
+
+
+// Margin
+
+.u-margin {
+    &-bottom {
+        &-smaller {
+            margin-bottom: 1rem;
+            @include atSmall {
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        &-small {
+            margin-bottom: 1.333rem;
+            @include atSmall {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+// Font weight
+
+.u-weight {
+    &-lgt {
+        font-weight: 300;
+    }
+
+    &-reg {
+        font-weight: 400;
+    }
+
+    &-med {
+        font-weight: 500;
+    }
+
+    &-bld {
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,14 @@
+.container,
+.container-fluid,
+.row,
+[class^="col"] {
+    height: 100%;
+}
+
+[class^="col"] {
+    padding: 0 15px;
+}
+
+.container {
+    max-width: 100%;
+}

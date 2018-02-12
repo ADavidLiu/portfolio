@@ -1,3 +1,105 @@
 .hero {
-    
+    background-color: $color-primary;
+    height: 70vh;
+    @include atSmall {
+        padding: 0 30px;
+    }
+
+    &__content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    &__logo {
+        width: 6.667rem;
+        height: auto;
+        margin-bottom: 4rem;
+        position: relative;
+        @include atSmall {
+            width: 5rem;
+            margin-bottom: 3rem;
+        }
+
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 6.667rem;
+            height: 5px;
+            background-color: $color-secondary;
+            @include atSmall {
+                width: 5rem;
+                bottom: -1.5rem;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 2.5rem;
+        @include atSmall {
+            margin-top: 1.875rem;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 1rem;
+        @include atSmall {
+            margin-right: 0.75rem;
+        }
+
+        &-item {
+            & + & {
+                margin-left: 1rem;
+                @include atSmall {
+                    margin-left: 0.75rem;
+                }
+            }
+        }
+
+        &-link {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            font-size: 1.667rem;
+            background-color: $color-secondary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .25s;
+            border: 2px solid $color-secondary;
+            box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+            @include linkStates($color-primary, none);
+            @include atSmall {
+                height: 3rem;
+                width: 3rem;
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &__cta {
+        flex: 1;
+        @include atSmall {
+            flex: 0 0 auto;
+        }
+    }
 }

@@ -14,18 +14,36 @@
     font-weight: 500;
     font-size: 2.5rem;
     line-height: $base-lineHeight;
+    color: $color-dark;
     @include atSmall {
         font-size: 1.875rem;
+    }
+}
+
+.heading-tertiary {
+    font-family: $font-title;
+    font-weight: 500;
+    font-size: 2rem;
+    color: $color-dark;
+    @include atSmall {
+        font-size: 1.5rem;
     }
 }
 
 .paragraph {
     font-family: $font-main;
     font-size: 1.333rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: $base-lineHeight;
     color: $color-dark;
     @include atSmall {
         font-size: 1rem;
+    }
+
+    &--med {
+        font-size: 1.667rem;
+        @include atSmall {
+            font-size: 1.25rem;
+        }
     }
 }
