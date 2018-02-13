@@ -1,0 +1,182 @@
+.portfolio {
+    position: relative;
+    height: 100%;
+    @include atSmall {
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    @include atMedium {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header {
+        text-align: center;
+        background-color: $color-primary;
+        padding: 1rem 2rem;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 2rem;
+        transform: translateY(-50%);
+        box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+        background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
+        text-align: center;
+        font-style: italic;
+        border-radius: 5px;
+        @include atSmall {
+            display: inline-block;
+            left: 3.5rem;
+        }
+        @include atMedium {
+            left: auto;
+            right: 3.5rem;
+        }
+    }
+
+    &__content {
+        &-sub {
+            display: none;
+        }
+    }
+
+    &__item {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: 125% auto;
+        background-position: center top;
+        object-fit: cover;
+        height: 25rem;
+        transition: all .25s;
+        @include atSmall {
+            background-size: 115% auto;
+        }
+        @include atLarge {
+            height: 30rem;
+        }
+
+        &-cta {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include atSmall {
+                bottom: 1.5rem;
+            }
+
+            &__item {
+                & + & {
+                    margin-left: 1.333rem;
+                    @include atSmall {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            &__label {
+                transition: all .25s;
+                opacity: 0;
+                font-family: $font-main;
+                color: $color-white;
+                font-size: 1.333rem;
+                position: absolute;
+                top: 50%;
+                left: 2.5rem;
+                transform: scaleX(0) translateY(-50%);
+                @include atSmall {
+                    font-size: 1rem;
+                }
+            }
+
+            &__icon {
+                transition: all .25s;
+            }
+
+            &__link {
+                height: 4rem;
+                width: 4rem;
+                font-size: 1.667rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: $color-primary;
+                background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
+                box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+                transition: all .25s;
+                position: relative;
+                @include linkStates($color-white, none);
+                @include atSmall {
+                    height: 3rem;
+                    width: 3rem;
+                    font-size: 1.25rem;
+                }
+
+                &--live {
+                    overflow: hidden;
+                    &:hover {
+                        width: 13rem;
+                        border-radius: 5rem;
+                        @include atSmall {
+                            width: 10rem;
+                        }
+
+                        .portfolio__item-cta {
+                            &__label {
+                                opacity: 1;
+                                transform: translateY(-60%);
+                                @include atSmall {
+                                    transform: translateY(-55%);
+                                }
+                                @include atMedium {
+                                    transform: translateY(-60%);
+                                }
+                            }
+
+                            &__icon {
+                                transform: translateX(3rem);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            background-size: 140% auto;
+            @include atSmall {
+                background-size: 130% auto;
+            }
+        }
+
+        &:first-child {
+            @include atMedium {
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 2.5rem 0;
+        text-align: center;
+        background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: all .25s;
+        @include atSmall {
+            padding: 1.875rem 0;
+        }
+        @include atMedium {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.loader {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s;
+
+    &__icon {
+        color: $color-gray;
+        opacity: 1;
+        font-size: 6.667rem;
+        @include atSmall {
+            font-size: 5rem;
+        }
+    }
+
+    &--inactive {
+        transform: scale(1.5);
+        opacity: 0;
+        pointer-events: none;
+    }
+}

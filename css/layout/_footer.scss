@@ -1,0 +1,12 @@
+.footer {
+    padding: 3rem 15px;
+    text-align: center;
+    @include atSmall {
+        padding: 2.25rem 15px;
+    }
+
+    &__heart {
+        color: $color-secondary;
+        animation: pulse 1s ease-in-out infinite;
+    }
+}

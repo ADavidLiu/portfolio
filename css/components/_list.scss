@@ -1,0 +1,23 @@
+.list {
+    margin: 1.333rem 0;
+    @include atSmall {
+        margin: 1rem 0;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+
+        &:before {
+            content: "•";
+            color: $color-primary;
+            font-size: 1.333rem;
+            margin-right: 1rem;
+            @include atSmall {
+                font-size: 1rem;
+                margin-right: 0.75rem;
+            }
+        }
+    }
+}

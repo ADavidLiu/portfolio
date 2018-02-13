@@ -21,8 +21,14 @@ body {
 }
 
 main {
+    margin-top: 59.5rem;
+    position: relative;
     @include atSmall {
         padding: 0 30px;
+        margin-top: 39rem;
+    }
+    @include atExtralarge {
+        margin-top: 37rem;
     }
 }
 

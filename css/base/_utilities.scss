@@ -24,6 +24,25 @@
                 margin-bottom: 1rem;
             }
         }
+
+        &-med {
+            margin-bottom: 1.667rem;
+            @include atSmall {
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+}
+
+
+// Padding
+
+.u-padding {
+    &-horizontal {
+        &-null {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -45,5 +64,41 @@
 
     &-bld {
         font-weight: 700;
+    }
+}
+
+
+// Font family
+
+.u-font {
+    &-title {
+        font-family: $font-title;
+    }
+
+    &-main {
+        font-family: $font-main;
+    }
+}
+
+
+// Align
+
+.u-align {
+    &-block {
+        &-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+
+// Overflow
+
+.u-overflow {
+    &-vertical {
+        &-hidden {
+            overflow: hidden;
+        }
     }
 }

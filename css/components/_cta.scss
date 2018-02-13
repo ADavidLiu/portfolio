@@ -1,13 +1,13 @@
 .cta {
     display: flex;
     height: 4rem;
-    background-color: $color-secondary;
-    border: 2px solid $color-secondary;
+    background-color: $color-accent;
+    border: 2px solid $color-accent;
     border-radius: 5rem;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0;
+    padding: 0 2rem;
     box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
     transition: all .25s;
     @include linkStates($color-white, none);
@@ -16,18 +16,126 @@
         padding: 0 2.5rem;
     }
 
-    &:hover {
-        background-color: transparent;
+    &__icon {
+        font-size: 1.667rem;
+        transition: all .25s;
+        @include atSmall {
+            font-size: 1.25rem;
+        }
+    }
+    
+    &__label {
+        transition: all .25s;
+        opacity: 0;
+        font-family: $font-main;
+        color: $color-white;
+        font-size: 1.333rem;
+        position: absolute;
+        top: 50%;
+        left: 2.5rem;
+        transform: scaleX(0) translateY(-50%);
+        @include atSmall {
+            font-size: 1rem;
+        }
     }
 
+    &:hover {
+        background-color: transparent;
+        color: $color-secondary;
+    }
+    
+    &--grad {
+        background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
+        border: 0;
+        &:hover {
+            color: $color-white;
+        }
+    }
+    
+    &--round {
+        border-radius: 50%;
+        width: 4rem;
+        @include atSmall {
+            padding: 0;
+            width: 3rem;
+        }
+    }
+    
     &--outline {
         background: transparent;
-        border: 2px solid $color-secondary;
-        @include linkStates($color-secondary, none);
+        border: 2px solid $color-accent;
+        @include linkStates($color-accent, none);
+        &:hover {
+            background-color: $color-accent;
+            color: $color-primary;
+        }
+    }
+    
+    &--white {
+        background-color: $color-gray;
+        border-color: $color-gray;
+        color: $color-primary;
+        @include linkStates($color-primary, none);
+        &:hover {
+            color: $color-gray;
+        }
+    }
+    
+    &--white-outline {
+        background: transparent;
+        border-color: $color-gray;
+        color: $color-gray;
+        @include linkStates($color-gray, none);
+        &:hover {
+            background-color: $color-gray;
+            color: $color-primary;
+        }
+    }
+    
+    &--reveal,
+    &--reveal-inv {
+        overflow: hidden;
 
         &:hover {
-            background-color: $color-secondary;
-            color: $color-primary;
+            width: 13rem;
+            border-radius: 5rem;
+            @include atSmall {
+                width: 10rem;
+            }
+
+            .cta {
+                &__label {
+                    opacity: 1;
+                    transform: translateY(-60%);
+                    @include atSmall {
+                        transform: translateY(-55%);
+                    }
+                    @include atMedium {
+                        transform: translateY(-60%);
+                    }
+                }
+
+                &__icon {
+                    transform: translateX(3rem);
+                }
+            }
+        }
+    }
+
+    &--reveal-inv {
+        .cta {
+            &__label {
+                left: auto;
+                right: 2.5rem;
+            }
+        }
+
+        &:hover {
+            .cta {
+                &__icon {
+                    transform: translateX(-3rem);
+                }
+            }
         }
     }
 }

@@ -1,0 +1,34 @@
+.resume {
+    @include atSmall {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    & > * {
+        padding: 2rem;
+        background-color: $color-dark;
+        @include atSmall {
+            padding: 2rem 3.5rem;
+        }
+
+        &:nth-child(even) {
+            background-color: transparent;
+        }
+
+        &:first-child {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            @include atMedium {
+                border-top-right-radius: 0;
+            }
+        }
+
+        &:last-child {
+            flex: 1;
+            @include atMedium {
+                border-bottom-left-radius: 5px;
+            }
+        }
+    }
+}
