@@ -1,6 +1,7 @@
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    max-width: 100vw;
     font-size: 12px;
     background-color: $color-white;
     @include atSmall {
@@ -21,8 +22,9 @@ body {
 }
 
 main {
-    margin-top: 59.5rem;
+    margin-top: 2.5rem;
     position: relative;
+    padding: 0 15px;
     @include atSmall {
         padding: 0 30px;
         margin-top: 39rem;

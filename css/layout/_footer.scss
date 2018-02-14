@@ -1,6 +1,9 @@
 .footer {
     padding: 3rem 15px;
     text-align: center;
+    background-color: $color-white;
+    position: relative;
+    z-index: 1;
     @include atSmall {
         padding: 2.25rem 15px;
     }

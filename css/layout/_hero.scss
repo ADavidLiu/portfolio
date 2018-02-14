@@ -2,16 +2,20 @@
     background-color: $color-primary;
     background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
     min-height: 70vh;
-    position: fixed;
-    top: 2.5rem;
-    left: 2.5rem;
+    
+    top: 15px;
+    left: 15px;
     padding: 0 15px;
-    width: calc(100% - 5rem);
-    border-radius: 5px;
+    width: 100%;
     transition: all .5s;
     @include atSmall {
+        border-radius: 5px;
         padding: 0 30px;
+        position: fixed;
+        top: 2.5rem;
+        left: 2.5rem;
         min-height: 0;
+        width: calc(100vw - 5rem);
     }
 
     &__content {
@@ -40,7 +44,7 @@
         &:after {
             content: "";
             position: absolute;
-            bottom: -1rem;
+            bottom: -2.5rem;
             left: 0;
             width: 6.667rem;
             height: 5px;
