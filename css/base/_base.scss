@@ -27,6 +27,9 @@ main {
     padding: 0 15px;
     @include atSmall {
         padding: 0 30px;
+        margin-top: 37rem;
+    }
+    @include atMedium {
         margin-top: 39rem;
     }
     @include atExtralarge {

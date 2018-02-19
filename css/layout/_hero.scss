@@ -2,7 +2,6 @@
     background-color: $color-primary;
     background-image: linear-gradient(to bottom right, $color-primary, $color-secondary);
     min-height: 70vh;
-    
     top: 15px;
     left: 15px;
     padding: 0 15px;
@@ -24,6 +23,12 @@
         align-items: flex-start;
         justify-content: flex-start;
         padding: 4rem 0 10rem 0;
+        @include atSmall {
+            padding-bottom: 8rem;
+        }
+        @include atMedium {
+            padding-bottom: 10rem;
+        }
     }
 
     &__logo {
@@ -114,6 +119,35 @@
         flex: 1;
         @include atSmall {
             flex: 0 0 auto;
+        }
+    }
+
+    &__wrapper {
+        @include atSmall {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    &__profile {
+        position: relative;
+        margin-bottom: 3.75rem;
+        
+        &-img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+
+            @include atMedium {
+                right: 2rem;
+                width: 75%;
+            }
+            @include atLarge {
+                width: auto;
+                max-height: 500px;
+            }
         }
     }
 
