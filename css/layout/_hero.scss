@@ -162,7 +162,7 @@
 
             &__bubble {
                 position: relative;
-                padding: 0.5rem 1.5rem;
+                padding: 0.25rem 1rem;
                 border-radius: 3rem;
                 background-color: $color-white;
                 display: flex;
@@ -170,6 +170,9 @@
                 justify-content: center;
                 box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
                 transform: rotate(-15deg);
+                @include atMedium {
+                    padding: 0.5rem 1.5rem;
+                }
 
                 &:after {
                     content: "";
