@@ -133,20 +133,78 @@
     &__profile {
         position: relative;
         margin-bottom: 3.75rem;
+        padding: 0;
+        text-align: right;
+        @include atMedium {
+            padding-right: 2rem;
+        }
+
+        &-message {
+            position: absolute;
+            top: 3rem;
+            left: -2.5rem;
+            opacity: 0;
+            transform: scale(0);
+            transition: all .25s;
+            pointer-events: none;
+            @include atMedium {
+                top: 5rem;
+                left: 5.5rem;
+            }
+            @include atLarge {
+                top: 4rem;
+                left: 9rem;
+            }
+            @include atExtralarge {
+                top: 5rem;
+                left: 10rem;
+            }
+
+            &__bubble {
+                position: relative;
+                padding: 0.5rem 1.5rem;
+                border-radius: 3rem;
+                background-color: $color-white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
+                transform: rotate(-15deg);
+
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 1rem 1rem 0;
+                    border-color: transparent $color-white transparent transparent;
+                    position: absolute;
+                    bottom: 0;
+                    right: 1.5rem;
+                    transform: translateY(99%);
+                }
+            }
+        }
         
         &-img {
-            position: absolute;
+            position: relative;
             bottom: 0;
             right: 0;
             width: 100%;
 
             @include atMedium {
-                right: 2rem;
                 width: 75%;
             }
             @include atLarge {
                 width: auto;
                 max-height: 500px;
+            }
+
+            &:hover {
+                & + .hero__profile-message {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
         }
     }

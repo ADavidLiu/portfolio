@@ -5,6 +5,7 @@ class Portfolio {
         this.portfolioSub = $(".portfolio__content-sub");
         this.isSubVisible = false;
         this.portfolioLiveTrigger = $(".portfolio__item-cta__link--live");
+        this.portfolioInfoTrigger = $(".portfolio__item-cta__link--info");
         this.baseUrl = "http://andresliu.xyz/portfolio/";
         this.sectionMain = $(".section-main");
         this.sectionPortfolioViewer = $(".section-portfolio-viewer");
@@ -25,6 +26,14 @@ class Portfolio {
             that.displayPortfolioItem(url);
         });
         this.btnBack.click(this.goBack.bind(this));
+        this.portfolioInfoTrigger.click(this.toggleInfo);
+    }
+
+    toggleInfo = (e) => {
+        e.preventDefault();
+        const $this = $(e.currentTarget);
+        $this.children().toggleClass("portfolio__item-cta__icon--is-open");
+        $this.parents(".portfolio__item-preview").toggleClass("portfolio__item-preview--is-open").siblings().slideToggle("fast");
     }
 
     showSubContent = () => {
@@ -34,7 +43,7 @@ class Portfolio {
     }
 
     getPorfolioItem($this) {
-        const $item = $this.parents(".portfolio__item");
+        const $item = $this.parents(".portfolio__item-preview");
         const name = $item.attr("data-portfolio");
         const fullUrl = this.baseUrl + name;
         return fullUrl;

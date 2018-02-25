@@ -43,20 +43,6 @@
     }
 
     &__item {
-        position: relative;
-        background-repeat: no-repeat;
-        background-size: 125% auto;
-        background-position: center top;
-        object-fit: cover;
-        height: 25rem;
-        transition: all .25s;
-        @include atSmall {
-            background-size: 115% auto;
-        }
-        @include atLarge {
-            height: 30rem;
-        }
-
         &-cta {
             position: absolute;
             bottom: 2rem;
@@ -95,6 +81,10 @@
 
             &__icon {
                 transition: all .25s;
+
+                &--is-open {
+                    transform: rotate(45deg);
+                }
             }
 
             &__link {
@@ -146,17 +136,56 @@
                 }
             }
         }
-
-        &:hover {
-            background-size: 140% auto;
+        
+        &-preview {
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: 125% auto;
+            background-position: center top;
+            object-fit: cover;
+            height: 25rem;
+            transition: all .25s;
             @include atSmall {
-                background-size: 130% auto;
+                background-size: 115% auto;
+            }
+            @include atLarge {
+                height: 30rem;
+            }
+    
+            &:hover {
+                background-size: 140% auto;
+                @include atSmall {
+                    background-size: 130% auto;
+                }
+            }
+
+            &--is-open {
+                box-shadow: 0 5px 15px rgba($color-black, .125);
+            }
+        }
+
+        &-info {
+            background-color: $color-white;
+            display: none;
+
+            &__intro,
+            &__content {
+                padding: 1rem;
+                @include atSmall {
+                    padding: 2rem;
+                }
+            }
+
+            &__intro {
+                background-color: $color-secondary;
             }
         }
 
         &:first-child {
-            @include atMedium {
-                border-top-right-radius: 5px;
+            .portfolio__item-preview {
+                @include atMedium {
+                    border-top-right-radius: 5px;
+                }
             }
         }
     }
