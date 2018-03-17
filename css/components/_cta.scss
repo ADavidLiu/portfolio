@@ -1,11 +1,12 @@
 .cta {
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 4rem;
+    line-height: 3.5rem;
     background-color: $color-accent;
     border: 2px solid $color-accent;
     border-radius: 5rem;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     padding: 0 2rem;
     box-shadow: 0 10px 20px rgba($color-black, 0.09), 0 6px 6px rgba($color-black, 0.123);
@@ -13,6 +14,7 @@
     @include linkStates($color-white, none);
     @include atSmall {
         height: 3rem;
+        line-height: 2.75rem;
         padding: 0 2.5rem;
     }
 
@@ -106,13 +108,7 @@
             .cta {
                 &__label {
                     opacity: 1;
-                    transform: translateY(-60%);
-                    @include atSmall {
-                        transform: translateY(-55%);
-                    }
-                    @include atMedium {
-                        transform: translateY(-60%);
-                    }
+                    transform: translateY(-50%);
                 }
 
                 &__icon {
